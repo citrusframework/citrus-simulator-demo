@@ -1,0 +1,5 @@
+{
+  "id": "citrus:randomNumber(10)",
+  "username": "citrus:randomEnumValue('amy', 'penny', 'sheldon', 'leonard', 'rajesh', 'howard', 'bernadette')",
+  "password": "citrus:randomString(10)"
+}

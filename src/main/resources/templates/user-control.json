@@ -1,0 +1,5 @@
+{
+  "id": "@isNumber()@",
+  "username": "@notEmpty()@",
+  "password": "@notEmpty()@"
+}
