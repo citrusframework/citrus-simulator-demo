@@ -1,4 +1,4 @@
-# Citrus simulator sample ![Logo](http://www.citrusframework.org/img/brand-logo.png)
+# Citrus simulator demo ![Logo](http://www.citrusframework.org/img/brand-logo.png)
 
 When developing software that exchanges data with other components or services you may be confronted with the proper simulation of those foreign services during integration testing. This is because you need to connect with a foreign service 
 that is simply not available on your local machine or in a test environment. 
@@ -446,6 +446,25 @@ public class UserLogoutScenario extends AbstractSimulatorScenario {
 
 Last not least the logout operation that completes the REST API for the user login service. Now the simulator is able to respond to all operations that are defined in the REST API. Clients are now able to call the 
 operations via Http REST. The simulator will verify the incoming request data and create proper response messages.
+
+You can test the simulator by pointing your browser to the following URLs:
+
+```
+http://localhost:8080/services/rest/v1/user/test
+http://localhost:8080/services/rest/v1/user/login?username=christoph&password=secr3t
+http://localhost:8080/services/rest/v1/user/logout
+```
+
+You should always get proper `Http 200 OK` response messages. The login request should get a new login token in the response every time. In case we send some invalid request we should get `Http 500` responses and for 
+unsupported request paths we should get a `Http 404` response. Try that with following test URLs.
+
+```
+http://localhost:8080/services/rest/v1/unsupported
+http://localhost:8080/services/rest/v1/user/login
+http://localhost:8080/services/rest/v1/user/login?username=pwd_missing
+```
+
+With the above test requests we triggered some activities on the simulator. Let's review those activities in the web based user interface. 
  
 ### Simulator user interface
 
@@ -509,6 +528,7 @@ The Citrus simulator project brings everything to manage standalone simulation o
 JMS and many other messaging transports. The integration with Citrus framework capabilities enables us to create even very complex scenarios with intermediate message handling and consecutive message calls as well as
 content based routing.
 
-Explore all [sample projects](https://github.com/christophd/citrus-simulator/tree/master/simulator-samples) and find out how the simulator works best for you and your requirements.
+You can find the complete sample sources on [github (https://github.com/citrusframework/citrus-simulator-demo)](https://github.com/citrusframework/citrus-simulator-demo). Also please explore all other 
+simulator [sample projects](https://github.com/christophd/citrus-simulator/tree/master/simulator-samples) and find out how the simulator works best for you and your requirements.
  
 Of course any feedback is very welcome!
