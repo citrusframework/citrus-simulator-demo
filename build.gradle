@@ -15,11 +15,15 @@ apply plugin: 'org.springframework.boot'
 jar {
     group = "com.consol.citrus.simulator"
     baseName = 'user-login-simulator'
-    version =  '1.0.0'
+    version =  '1.0.1'
 }
 
 repositories {
     mavenCentral()
+    mavenLocal()
+    maven {
+        url 'https://labs.consol.de/maven/snapshots-repository/'
+    }
 }
 
 sourceCompatibility = 1.8
@@ -28,7 +32,7 @@ targetCompatibility = 1.8
 dependencies {
     compile("org.springframework.boot:spring-boot-starter")
     compile("org.springframework.boot:spring-boot-starter-web")
-    compile("com.consol.citrus:citrus-simulator-starter:1.0.0")
-    compile("com.consol.citrus:citrus-simulator-ui:1.0.0")
+    compile("com.consol.citrus:citrus-simulator-starter:1.0.1-SNAPSHOT")
+    compile("com.consol.citrus:citrus-simulator-ui:1.0.1-SNAPSHOT")
     testCompile("junit:junit")
 }

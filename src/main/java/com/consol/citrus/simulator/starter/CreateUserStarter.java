@@ -18,7 +18,7 @@ import java.util.List;
 @Starter("CREATE_USER_STARTER")
 public class CreateUserStarter extends AbstractScenarioStarter {
 
-    private String requestUrl = "http:localhost:8080/services/rest/v1/user";
+    private String requestUrl = "http:localhost:8088/services/rest/v1/user";
 
     @Override
     public void run(ScenarioDesigner scenario) {
