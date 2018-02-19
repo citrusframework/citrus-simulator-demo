@@ -3,7 +3,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.7.RELEASE")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.10.RELEASE")
     }
 }
 
@@ -32,7 +32,7 @@ targetCompatibility = 1.8
 dependencies {
     compile("org.springframework.boot:spring-boot-starter")
     compile("org.springframework.boot:spring-boot-starter-web")
-    compile("com.consol.citrus:citrus-simulator-starter:1.0.1")
-    compile("com.consol.citrus:citrus-simulator-ui:1.0.1")
+    compile("com.consol.citrus:citrus-simulator-starter:1.0.2")
+    compile("com.consol.citrus:citrus-simulator-ui:1.0.2")
     testCompile("junit:junit")
 }
